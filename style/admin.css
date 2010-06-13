@@ -1,0 +1,100 @@
+body {
+	background-color: #CACACA;
+	font-family: verdana;
+	line-height: 150%;
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+.error {
+	font-size: .8em;
+	color: #CA0000;
+}
+
+a:link, a:visited {
+	text-decoration: underline;
+	color: #6F0010;
+}
+
+a:hover, a:active {
+	text-decoration: none;
+	color: #A70018;
+}
+
+.elipses {
+	font-style: italic;
+	color: #666666;
+}
+
+#wrapper {
+	width:900px;
+	margin: 0 auto;
+}
+
+#header {
+	width: 800px;
+	margin: 20px;
+	text-align: center;
+	color: #2F2F2F;
+	font-style: italic;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+#sidebar {
+	width: 100px;
+	float: left;
+	margin-right: 20px;
+}
+
+#sidebar ul li {
+	margin: 1em 0;
+}
+
+#content {
+	width: 780px;
+	float: left;
+}
+
+/* forms */
+fieldset {
+	border: 1px solid #545454;
+	padding: 1em;
+	background-color: #E5E5E5;
+}
+fieldset legend {
+	font-weight: bold;
+	padding: 0 .5em;
+}
+fieldset ul li {
+	clear: both;
+}
+fieldset ul li label {
+	width: 120px;
+	float: left;
+}
+fieldset ul li input {
+	float: left;
+}
+input {
+	width: 300px;
+}
+textarea {
+	width: 600px;
+	height: 200px;
+}
+
+/* tables */
+table th {
+	background-color: #E5E5E5;
+}
+table td {
+	background-color: #D6D6D6;
+}
+table td, table th {
+	border: 1px solid #545454;
+	padding: .5em;
+}
+
