@@ -12,40 +12,45 @@ function form_submit($value='Submit', $label='', $extra='') {
 }
 
 // display a field
-function form_field($type, $field='', $label='', $value='', $error='') {
+function form_field($type, $field='', $label='', $value='', $error='', $checked=false) {
     global $root;
-?>
-<li>
-    <label for="<?=html_sanitize($field)?>"><?=html_sanitize($label)?></label>
-<?php
-    switch($type) {
-        case 'text':
-            ?><input type="text" name="<?=html_sanitize($field)?>" value="<?=html_sanitize($value)?>"><?php
-            break;
-        // for checkbox, value is an array
-        case 'checkbox':
-            ?><input type="checkbox" name="<?=html_sanitize($field)?>" value="<?=html_sanitize($value)?>"><?php
-            break;
-        case 'password':
-            ?><input type="password" name="<?=html_sanitize($field)?>"><?php
-            break;
-        case 'textarea':
-            ?><textarea name="<?=html_sanitize($field)?>"><?=html_sanitize($value)?></textarea><?php
-            break;
-        case 'dropdown':
-            ?><select name="<?=html_sanitize($field)?>"><?=$value?></select><?php
-            break;
-        case 'upload': 
-            ?><input type="file" name="<?=html_sanitize($field)?>"><?php
-            break;
-        case 'custom':
-            echo $value;
-            break;
+    if($type == 'checkbox') {
+    ?>
+        <li>
+        <input type="checkbox" style="width:2em;" name="<?=html_sanitize($field)?>" value="<?=html_sanitize($value)?>" <?=$checked?' checked="checked"':''?>>
+            <label for="<?=html_sanitize($field)?>"><?=html_sanitize($label)?></label>
+        </li>
+        <?php
+    } else {
+        ?>
+        <li>
+            <label for="<?=html_sanitize($field)?>"><?=html_sanitize($label)?></label>
+        <?php
+        switch($type) {
+            case 'text':
+                ?><input type="text" name="<?=html_sanitize($field)?>" value="<?=html_sanitize($value)?>"><?php
+                break;
+            case 'password':
+                ?><input type="password" name="<?=html_sanitize($field)?>"><?php
+                break;
+            case 'textarea':
+                ?><textarea name="<?=html_sanitize($field)?>"><?=html_sanitize($value)?></textarea><?php
+                break;
+            case 'dropdown':
+                ?><select name="<?=html_sanitize($field)?>"><?=$value?></select><?php
+                break;
+            case 'upload': 
+                ?><input type="file" name="<?=html_sanitize($field)?>"><?php
+                break;
+            case 'custom':
+                echo $value;
+                break;
+        }
+        ?>
+        <?=error_display($error)?>
+        </li>
+        <?php
     }
-?>
-    <?=error_display($error)?>
-</li>
-<?php
 }
 
 ?>
