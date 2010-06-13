@@ -1,2 +1,3 @@
 A scheduling web application for the Next HOPE.
+To set this up locally, you put MySQL info in include/config.inc.php, and import include/schema.sql to your database.
 

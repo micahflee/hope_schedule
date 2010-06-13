@@ -35,3 +35,4 @@ CREATE TABLE IF NOT EXISTS `tnhs_user` (
 
 INSERT INTO `tnhs_user` (`id`, `username`, `password`) VALUES
 (1, 'micah', '$P$Bp.P8KDGmQe3S4zV6//FDOPoF8DLJ90');
+
