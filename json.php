@@ -7,6 +7,7 @@ class Event {
 
         $event_rows = $db->query("select * from ".$db->pre."event where id='".$db->escape($id)."'");
         $event_row = $db->fetch_array($event_rows);
+        $this->id = $event_row['id'];
         $this->title = $event_row['title'];
         $this->decription = $event_row['description'];
         $this->timestamp = $event_row['timestamp'];
