@@ -1,3 +1,4 @@
 A scheduling web application for the Next HOPE.
 To set this up locally, you put MySQL info in include/config.inc.php, and import include/schema.sql to your database.
+The first user that's included in schema.sql has a username of hope_folks, password of onplanetearth.
 

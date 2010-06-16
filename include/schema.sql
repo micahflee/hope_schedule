@@ -34,5 +34,5 @@ CREATE TABLE IF NOT EXISTS `tnhs_user` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 INSERT INTO `tnhs_user` (`id`, `username`, `password`) VALUES
-(1, 'micah', '$P$Bp.P8KDGmQe3S4zV6//FDOPoF8DLJ90');
+(1, 'hope_folks', '$P$Bvwno713foCRoQP44l5vpJIC13p3Yq0'
 
