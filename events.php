@@ -116,8 +116,8 @@ switch($q) {
 		if($db->num_rows($location_rows) == 0)
 			$error['location_id'] = 'Invalid location';
 
-        // speakers
-        $speakers = $_POST['speakers'];
+                // speakers
+                $speakers = $_POST['speakers'];
 
 		// title
 		$event_row['title'] = $_POST['title'];
@@ -135,21 +135,22 @@ switch($q) {
 		
 		// update database
 		if($q == "add_submit") {
-			$db->query_insert("event", $event_row);
+                    $db->query_insert("event", $event_row);
+                    $event_id = mysql_insert_id();
 		}
 		else if($q == "edit_submit") {
-			$db->query_update("event", $event_row, "id='".$db->escape($event_id)."'");
-        }
-        $db->query("delete from ".$db->pre."event_speaker where event_id='".$db->escape($event_id)."'");
-        foreach($speakers as $key => $val) {
-            $speaker_rows = $db->query("select id from ".$db->pre."speaker where id='".$db->escape($key)."'");
-            if($db->num_rows($speaker_rows) > 0) {
-                $es_row = array();
-                $es_row['event_id'] = $db->escape($event_id);
-                $es_row['speaker_id'] = $db->escape($key);
-                $db->query_insert("event_speaker", $es_row);
-            }
-        }
+		    $db->query_update("event", $event_row, "id='".$db->escape($event_id)."'");
+                }
+                $db->query("delete from ".$db->pre."event_speaker where event_id='".$db->escape($event_id)."'");
+                foreach($speakers as $key => $val) {
+                    $speaker_rows = $db->query("select id from ".$db->pre."speaker where id='".$db->escape($key)."'");
+                    if($db->num_rows($speaker_rows) > 0) {
+                        $es_row = array();
+                        $es_row['event_id'] = $db->escape($event_id);
+                        $es_row['speaker_id'] = $db->escape($key);
+                        $db->query_insert("event_speaker", $es_row);
+                    }
+                }
 		break;
 
 	case "delete":
