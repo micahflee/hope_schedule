@@ -44,7 +44,7 @@ a:hover, a:active {
 }
 
 #sidebar {
-	width: 100px;
+	width: 120px;
 	float: left;
 	margin-right: 20px;
 }
@@ -54,7 +54,7 @@ a:hover, a:active {
 }
 
 #content {
-	width: 780px;
+	width: 760px;
 	float: left;
 }
 

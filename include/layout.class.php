@@ -38,6 +38,7 @@ class layout_admin {
 		<li><a href="<?=$root?>speakers.php">Speakers</a></li>
 		<li><a href="<?=$root?>locations.php">Locations</a></li>
 		<li><a href="<?=$root?>events.php">Events</a></li>
+		<li><a href="<?=$root?>notice.php">Notice</a></li>
 		<li><a href="<?=$root?>users.php">Users</a></li>
 		<li><a href="<?=$root?>logout.php">Logout</a></li>
 	</ul>
